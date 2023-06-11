@@ -22,3 +22,4 @@ Route::get('/index', function(){
 });
 Route::get('login', [AuthenticationController::class, 'loginIndex']);
 Route::get('register', [AuthenticationController::class, 'registerIndex']);
+Route::post('register', [AuthenticationController::class, 'register']);
