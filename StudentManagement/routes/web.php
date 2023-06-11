@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/index', function(){
     return view('layout.index');
 });
+Route::get('login', [AuthenticationController::class, 'loginIndex']);
