@@ -9,4 +9,4 @@
         <a class="login-button" href="/login">Login</a>
         <a  class="register-button" href="/register">Sign in</a>
     </div>
-</dir>
+</div>
