@@ -17,6 +17,16 @@ class AuthenticationController extends Controller
     public function registerIndex(){
         return view('Auth.register');
     }
+    public function login(Request $request){
+        $credentials = $request->only(['email', 'password']);
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
+            return redirect()->intended('index');
+        }
+        return back()->with(
+            'error','The provided credentials do not match course requirements'
+        );
+    }
     public function register(Request $request){
         $request->validate([
             'name' => 'required',
