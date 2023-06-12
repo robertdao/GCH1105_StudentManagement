@@ -1,7 +1,7 @@
 <div class="wrapper-left">
     <div class="list-top">
         <div class="content">
-            <a class="content-action" href="">
+            <a class="content-action" href="{{url('index')}}">
                 <div class="list-content">
                     <div class="image-logo">
                     <img srcset="{{URL('images/home.png')}} 2x" alt="">

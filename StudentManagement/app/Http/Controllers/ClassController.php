@@ -46,7 +46,11 @@ class ClassController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $class = Classes::find($id);
+        return view('class.show', [
+            '$class' => $class
+        ]);
+
     }
 
     /**
