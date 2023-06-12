@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/index', function(){
 Route::get('login', [AuthenticationController::class, 'loginIndex']);
 Route::get('register', [AuthenticationController::class, 'registerIndex']);
 Route::post('register', [AuthenticationController::class, 'register']);
+Route::post('login', [AuthenticationController::class, 'login']);
+Route::resource('students', StudentController::class);
