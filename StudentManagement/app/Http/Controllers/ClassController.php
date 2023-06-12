@@ -25,6 +25,7 @@ class ClassController extends Controller
     public function create()
     {
         //
+        return view('class.create');
     }
 
     /**
@@ -33,6 +34,11 @@ class ClassController extends Controller
     public function store(Request $request)
     {
         //
+        $class = new Classes();
+        $class->name = $request->name; 
+        $class->capacity=$request->capacity;
+        $class->save();
+        return redirect()->route('class.index');
     }
 
     /**
