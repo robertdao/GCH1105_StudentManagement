@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\ClassController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use App\Http\Controllers\AuthenticationController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::resource('/class', ClassController::class);
 Route::get('/', function () {
     return view('welcome');
 });
