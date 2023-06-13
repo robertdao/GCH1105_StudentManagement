@@ -1,7 +1,7 @@
 <div class="wrapper-left">
     <div class="list-top">
         <div class="content">
-            <a class="content-action" href="">
+            <a class="content-action" href="{{url('index')}}">
                 <div class="list-content">
                     <div class="image-logo">
                     <img srcset="{{URL('images/home.png')}} 2x" alt="">
@@ -21,7 +21,7 @@
             </a>
         </div>
         <div class="content">
-            <a class="content-action" href="">
+            <a class="content-action" href="{{'/class'}}">
                 <div class="list-content">
                     <div class="image-logo">
                         <img srcset="{{URL('images/paper.png')}} 2x" alt="">
@@ -76,7 +76,7 @@
         </div>
 
         <div class="content">
-            <a class="content-action" href="">
+            <a class="content-action" href="{{url('class/create')}}">
                 <div class="list-content">
                     <div class="image-logo">
                         <img srcset="{{URL('images/paper.png')}} 2x" alt="">
