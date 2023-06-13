@@ -62,7 +62,7 @@
                     <button type="submit" class="login-buttom">Login</button>
                 </form>
                 <div class="webforguess">
-                    <a class="webforguess" href="/index">Website For Guess Hung HAhfasjhgfhasjfv</a>
+                    <a class="webforguess" href="/index">Website For Guess</a>
                 </div>
             </div>
             </div>
