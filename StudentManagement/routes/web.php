@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
+
+use App\Http\Controllers\StudentController;
+
 use App\Http\Controllers\ClassController;
+
 
 /*
 |--------------------------------------------------------------------------
