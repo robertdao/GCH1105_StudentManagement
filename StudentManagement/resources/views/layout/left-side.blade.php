@@ -31,7 +31,7 @@
             </a>
         </div>
         <div class="content">
-            <a class="content-action" href="">
+            <a class="content-action" href="{{url('major')}}">
                 <div class="list-content">
                     <div class="image-logo">
                         <img srcset="{{URL('images/major.png')}} 2x" alt="">
@@ -65,7 +65,7 @@
         </div>
 
         <div class="content">
-            <a class="content-action" href="">
+            <a class="content-action" href="{{url('major/create')}}">
                 <div class="list-content">
                     <div class="image-logo">
                         <img srcset="{{URL('images/major.png')}} 2x" alt="">

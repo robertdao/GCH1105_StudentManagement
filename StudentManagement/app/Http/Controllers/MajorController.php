@@ -25,6 +25,8 @@ class MajorController extends Controller
     public function create()
     {
         //
+        return view('major.create');
+            
     }
 
     /**
@@ -33,6 +35,11 @@ class MajorController extends Controller
     public function store(Request $request)
     {
         //
+        $major = Major::create($request->all());
+        $major->name = $request->name;
+        $major->subject = $request->subject;
+        $major-> save();
+        return redirect("major");
     }
 
     /**
@@ -41,6 +48,10 @@ class MajorController extends Controller
     public function show(string $id)
     {
         //
+        $major = Major::find($id);
+        return view('major.show',[
+            'major' => $major
+        ]);
     }
 
     /**
@@ -49,6 +60,10 @@ class MajorController extends Controller
     public function edit(string $id)
     {
         //
+        $major = Major::find($id);
+        return view("major.edit", [
+            'major' => $major
+        ]);
     }
 
     /**
@@ -57,6 +72,11 @@ class MajorController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $major = Major::find($id);
+        $major->name = $request->name;
+        $major->subject = $request->subject;
+        $major->save();
+        return redirect("/major");
     }
 
     /**
@@ -65,5 +85,8 @@ class MajorController extends Controller
     public function destroy(string $id)
     {
         //
+        $major = Major ::find($id);
+        $major->delete();
+        return redirect("/major");
     }
 }
