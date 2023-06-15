@@ -11,7 +11,7 @@
             </a>
         </div>
         <div class="content">
-            <a class="content-action" href="">
+            <a class="content-action" href="{{url('students')}}">
                 <div class="list-content">
                     <div class="image-logo">
                         <img srcset="{{URL('images/3-user.png')}} 2x" alt="">
@@ -87,12 +87,12 @@
         </div>
 
         <div class="content">
-            <a class="content-action" href="">
+            <a class="content-action" href="{{url('students/create')}}">
                 <div class="list-content">
                     <div class="image-logo">
                         <img srcset="{{URL('images/add-user.png')}} 2x" alt="">
                     </div>
-                    List Student
+                    ADD Student
                 </div>
             </a>
         </div>
