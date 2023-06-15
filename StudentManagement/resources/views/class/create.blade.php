@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('tile', 'Add Class')
+@section('title', 'Add Class')
 @section('content')
     <form action="/class" method="post">
         @csrf

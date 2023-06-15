@@ -1,5 +1,4 @@
 @extends('layout.layout')
-@section('title', 'index')
 @section('content')
 <div class="container-right">
     <div class="lable-member">

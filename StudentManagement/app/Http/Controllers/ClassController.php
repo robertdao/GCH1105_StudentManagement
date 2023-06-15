@@ -48,7 +48,7 @@ class ClassController extends Controller
     {
         $class = Classes::find($id);
         return view('class.show', [
-            '$class' => $class
+            'class' => $class
         ]);
 
     }
@@ -59,6 +59,11 @@ class ClassController extends Controller
     public function edit(string $id)
     {
         //
+        $class = Classes::find($id);
+        return view('class.edit', [
+            'class'=>$class,
+        ]);
+      
     }
 
     /**
@@ -67,6 +72,11 @@ class ClassController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $class=Classes::find($id);
+        $class->name = $request->name;
+        $class->capacity = $request->capacity;
+        $class->save();
+        return redirect('/class');
     }
 
     /**
@@ -75,5 +85,8 @@ class ClassController extends Controller
     public function destroy(string $id)
     {
         //
+        $class = Classes::find($id);
+        $class->delete();
+        return redirect('class');
     }
 }

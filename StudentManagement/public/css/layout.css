@@ -205,3 +205,19 @@ main {
     color: rgba(7, 72, 74, 1);
     text-align: justify;
 }
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: rgb(35, 162, 163);
+    background: linear-gradient(
+        0deg,
+        rgba(35, 162, 163, 1) 0%,
+        rgba(229, 171, 44, 1) 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

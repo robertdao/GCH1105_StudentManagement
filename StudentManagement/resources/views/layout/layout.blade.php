@@ -25,6 +25,7 @@
                     @include('layout.left-side')
                 </div>
                 <div class="right-side">
+                    <div class="title">@yield('title')</div>
                     @yield('content')
                 </div>
             </div>
