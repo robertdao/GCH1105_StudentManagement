@@ -41,4 +41,8 @@ class AuthenticationController extends Controller
         Auth::login($users);
         return redirect('index')->with('success', 'You have successfully created an account !!!');
     }
+    public function logout(){
+        Auth::logout();
+        return redirect('/login');
+    }
 }

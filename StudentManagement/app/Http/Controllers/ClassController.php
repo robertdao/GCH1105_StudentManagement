@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Classes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ClassController extends Controller
 {
@@ -25,6 +26,9 @@ class ClassController extends Controller
     public function create()
     {
         //
+        if (!Auth::check()) {
+            return redirect('/login');
+        }
         return view('class.create');
     }
 

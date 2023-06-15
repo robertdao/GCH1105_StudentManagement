@@ -5,8 +5,15 @@
     <div class="title-project">
         <h1 class="title-student">STUDENT MANAGEMENT</h1>
     </div>
-    <div class="authentication">
-        <a class="login-button" href="/login">Login</a>
-        <a  class="register-button" href="/register">Sign in</a>
-    </div>
+    @if (Auth::check())  
+        <div class="authentication">
+            <a href="/login">{{Auth::user()->name}}</a>
+            <a  class="register-button" href="/logout">Logout</a>
+        </div>
+    @else
+        <div class="authentication">
+            <a class="login-button" href="/login">Login</a>
+            <a  class="register-button" href="/register">Sign in</a>
+        </div>
+    @endif
 </div>
