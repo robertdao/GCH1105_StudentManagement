@@ -40,7 +40,7 @@ class MajorController extends Controller
     public function store(Request $request)
     {
         //
-        $major = Major::create($request->all());
+        $major = new Major();
         $major->name = $request->name;
         $major->subject = $request->subject;
         $major-> save();

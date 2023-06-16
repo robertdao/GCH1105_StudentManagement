@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Course;
 
 class CourseController extends Controller
 {
@@ -14,7 +15,7 @@ class CourseController extends Controller
         //
         $course = Course::all();
         return view('course.index',[
-            'courses' => $course
+            'course' => $course
         ]);
     }
 
@@ -24,6 +25,7 @@ class CourseController extends Controller
     public function create()
     {
         //
+        return view('course.create');
         
     }
 
@@ -33,7 +35,11 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         //
-       
+        $course = new Course();
+        $course->name = $request->name;
+        $course->save();
+        return redirect("courses");
+        
     }
 
     /**

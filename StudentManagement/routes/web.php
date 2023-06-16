@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CourseController;
 
 // |--------------------------------------------------------------------------
 // | Web Routes
@@ -30,3 +31,4 @@ Route::post('register', [AuthenticationController::class, 'register']);
 Route::get('logout', [AuthenticationController::class, 'logout']);
 Route::resource('/major', MajorController::class);
 Route::resource('/students', StudentController::class);
+Route::resource('/courses', CourseController::class);
