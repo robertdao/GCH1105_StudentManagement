@@ -15,10 +15,9 @@ class MajorController extends Controller
     {
         //
         $major = Major::all();
-        return view('major.index',[
+        return view('major.index', [
             'majors' => $major
         ]);
-        
     }
 
     /**
@@ -27,11 +26,10 @@ class MajorController extends Controller
     public function create()
     {
         //
-        if(!Auth::check()){
-            return redirect('/login');
-        }
+        // if(!Auth::check()){
+        //     return redirect('/login');
+        // }
         return view('major.create');
-            
     }
 
     /**
@@ -43,7 +41,7 @@ class MajorController extends Controller
         $major = new Major();
         $major->name = $request->name;
         $major->subject = $request->subject;
-        $major-> save();
+        $major->save();
         return redirect("major");
     }
 
@@ -54,7 +52,7 @@ class MajorController extends Controller
     {
         //
         $major = Major::find($id);
-        return view('major.show',[
+        return view('major.show', [
             'major' => $major
         ]);
     }
@@ -90,7 +88,7 @@ class MajorController extends Controller
     public function destroy(string $id)
     {
         //
-        $major = Major ::find($id);
+        $major = Major::find($id);
         $major->delete();
         return redirect("/major");
     }

@@ -12,4 +12,7 @@ class Classes extends Model
     protected $fillable = [
         'name', 'capacity'
     ];
+    public function students(){
+        return $this->hasMany(Student::class);
+    }
 }

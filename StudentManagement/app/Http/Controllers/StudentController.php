@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use App\Models\Classes;
 
 class StudentController extends Controller
 {
@@ -12,9 +13,11 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all();
+        $classes = Classes::all();
 
         return view('student.index', [
             'students' => $students,
+            'classes' => $classes
 
         ]);
     }
@@ -25,8 +28,10 @@ class StudentController extends Controller
     public function create()
     {
         $students = Student::all();
+        $classes = Classes::all();
         return view('student.create', [
             'students' => $students,
+            'classes' => $classes
         ]);
     }
 
@@ -36,10 +41,11 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $students = new Student();
-        $students->MSV = $request->MSV;
+        $students->student_id = $request->student_id;
         $students->name = $request->name;
         $students->birth = $request->birth;
-        $students->mail = $request->mail;
+        $students->email = $request->email;
+        $students->classes_id = $request->classes_id;
         $students->save();
         return redirect('/students');
     }
@@ -61,10 +67,10 @@ class StudentController extends Controller
     public function edit(string $id)
     {
         $students = Student::find($id);
-        
+        $classes = Classes::all();
         return view('student.edit', [
             'student' => $students,
-            
+            'classes' => $classes
         ]);
     }
 
@@ -75,10 +81,11 @@ class StudentController extends Controller
     {
         $students = Student::find($id);
 
-        $students->MSV = $request->MSV;
+        $students->student_id = $request->student_id;
         $students->name = $request->name;
         $students->birth = $request->birth;
-        $students->mail = $request->mail;
+        $students->email = $request->email;
+        $students->classes_id = $request->classes_id;
 
         $students->save();
         return redirect('/students');

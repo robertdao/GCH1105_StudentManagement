@@ -9,21 +9,26 @@
                 <th class="head-table">Name</th>
                 <th class="head-table">Birth Year</th>
                 <th class="head-table">Email</th>
+                <th class="head-table">Class</th>
                 <th class="head-table">Action</th>
             </tr>
             @foreach ($students as $student)
             <tr class="tr-content">
                 <td class="content-table">
-                    {{$student->MSV}}
+                    {{$student->student_id}}
                 </td>
                 <td class="content-table">
                     {{$student->name}}
                 </td>
+                
                 <td class="content-table">
                     {{$student->birth}}
                 </td>
                 <td class="content-table">
-                    {{$student->mail}}
+                    {{$student->email}}
+                </td>
+                <td class="content-table">
+                    {{$student->classes->name}}
                 </td>
 
                 <td>
