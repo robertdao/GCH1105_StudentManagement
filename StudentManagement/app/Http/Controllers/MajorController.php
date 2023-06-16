@@ -18,6 +18,7 @@ class MajorController extends Controller
         return view('major.index',[
             'majors' => $major
         ]);
+        
     }
 
     /**
