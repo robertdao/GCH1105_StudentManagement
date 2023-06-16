@@ -30,6 +30,16 @@
             @endforeach
         </select>
     </div>
+    <div class="mb-3">
+        <label for="majors" class="form-label">Major</label>
+
+        <select id="majors" name="majors_id" class="form-select" aria-label="Select Major">
+            <option>Please choose one</option>
+            @foreach($majors as $major)
+            <option {{ ($major->id == $student->major->id)?"selected":""}} value="{{$major->id}}">{{$major->name}}</option>
+            @endforeach
+        </select>
+    </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 

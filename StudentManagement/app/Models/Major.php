@@ -12,4 +12,7 @@ class Major extends Model
     protected $fillable = [
         'name', 'subject'
     ];
+    public function students(){
+        $this->hasMany(Student::class);
+    }
 }

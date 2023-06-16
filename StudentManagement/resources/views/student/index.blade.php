@@ -10,6 +10,7 @@
                 <th class="head-table">Birth Year</th>
                 <th class="head-table">Email</th>
                 <th class="head-table">Class</th>
+                <th class="head-table">Major</th>
                 <th class="head-table">Action</th>
             </tr>
             @foreach ($students as $student)
@@ -29,6 +30,9 @@
                 </td>
                 <td class="content-table">
                     {{$student->classes->name}}
+                </td>
+                <td class="content-table">
+                    {{$student->majors->name}}
                 </td>
 
                 <td>
