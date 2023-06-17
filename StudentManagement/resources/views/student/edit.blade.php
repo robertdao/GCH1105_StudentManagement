@@ -21,22 +21,20 @@
         <input type="text" class="form-control" id="email" name="email" placeholder="email" value="{{$student->email}}">
     </div>
     <div class="mb-3">
-        <label for="classes" class="form-label">Class</label>
-
-        <select id="classes" name="classes_id" class="form-select" aria-label="Select Class">
+        <label for="classes_id" class="form-label">Class</label>
+        <select id="classes_id" name="classes_id" class="form-select" aria-label="Select Class">
             <option>Please choose one</option>
             @foreach($classes as $class)
-            <option {{ ($class->id == $student->class->id)?"selected":""}} value="{{$class->id}}">{{$class->name}}</option>
+            <option {{ ($class->id == $student->classes->id)?"selected":""}} value="{{$class->id}}">{{$class->name}}</option>
             @endforeach
         </select>
     </div>
     <div class="mb-3">
-        <label for="majors" class="form-label">Major</label>
-
-        <select id="majors" name="majors_id" class="form-select" aria-label="Select Major">
+        <label for="majors_id" class="form-label">Major</label>
+        <select id="majors_id" name="majors_id" class="form-select" aria-label="Select Major">
             <option>Please choose one</option>
             @foreach($majors as $major)
-            <option {{ ($major->id == $student->major->id)?"selected":""}} value="{{$major->id}}">{{$major->name}}</option>
+            <option {{ ($major->id == $student->majors->id)?"selected":""}} value="{{$major->id}}">{{$major->name}}</option>
             @endforeach
         </select>
     </div>
