@@ -48,8 +48,10 @@ class CourseController extends Controller
     public function show(string $id)
     {
         //
-       
-     
+        $course = Course::find($id);
+        return view('course.show',[
+            'course' => $course
+        ]);
     }
 
     /**
@@ -58,8 +60,10 @@ class CourseController extends Controller
     public function edit(string $id)
     {
         //
-       
-
+        $course = Course::find($id);
+        return view('course.edit',[
+            'course' => $course
+        ]);
     }
 
     /**
@@ -69,6 +73,12 @@ class CourseController extends Controller
     {
         //
         
+        $course =Course::find($id);
+        $course->name = $request->name;
+        $course->save();
+        return redirect("/courses");
+
+        
     }
 
     /**
@@ -77,7 +87,9 @@ class CourseController extends Controller
     public function destroy(string $id)
     {
         //
-        
+        $course = Course:: find($id);
+        $course->delete();
+        return redirect("/courses");
 
     }
 }
