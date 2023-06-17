@@ -13,7 +13,7 @@ class StudentController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
+    {   
         $students = Student::all();
         $classes = Classes::all();
         $majors = Major::all();

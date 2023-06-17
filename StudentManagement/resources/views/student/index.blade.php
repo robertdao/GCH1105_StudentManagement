@@ -2,6 +2,10 @@
 @section('title', 'List Student')
 @section('content')
 
+
+@if (count($students) > 0)
+    <h1>Dont have student</h1>
+@else
 <div class="container-classroom">
     <table class="table-show">
             <tr class="tr-top">
@@ -30,7 +34,7 @@
                     {{$student->email}}
                 </td>
                 <td class="content-table">
-                    <img src="{{url("/upload/".$student->photo)}}" alt="">
+                    <img class="img-student" src="{{url("/upload/".$student->photo)}}" alt="">
                 </td>
                 <td class="content-table">
                     {{$student->classes->name}}
@@ -51,4 +55,5 @@
             @endforeach
     </table>
 </div>
+@endif
 @endsection

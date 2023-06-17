@@ -41,9 +41,11 @@ main {
     font-weight: 800;
     text-transform: uppercase;
     background: rgb(35, 162, 163);
-    background: linear-gradient(0deg,
-            rgba(35, 162, 163, 1) 0%,
-            rgba(229, 171, 44, 1) 100%);
+    background: linear-gradient(
+        0deg,
+        rgba(35, 162, 163, 1) 0%,
+        rgba(229, 171, 44, 1) 100%
+    );
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -287,5 +289,8 @@ main {
 .container-classroom {
     margin-top: 20px;
 }
-
+.img-student {
+    width: 120px;
+    height: 100%;
+}
 /* add */
