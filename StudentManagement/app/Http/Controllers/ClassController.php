@@ -25,10 +25,10 @@ class ClassController extends Controller
      */
     public function create()
     {
-        //
-        // if (!Auth::check()) {
-        //     return redirect('/login');
-        // }
+        
+        if (!Auth::check()) {
+            return redirect('/login');
+        }
         return view('class.create');
     }
 

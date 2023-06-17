@@ -5,6 +5,7 @@ use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Models\Classes;
 use App\Models\Major;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
@@ -32,6 +33,9 @@ class StudentController extends Controller
         $students = Student::all();
         $classes = Classes::all();
         $majors = Major::all();
+        if (!Auth::check()) {
+        return redirect('/login');
+        }
         return view('student.create', [
             'students' => $students,
             'classes' => $classes,
