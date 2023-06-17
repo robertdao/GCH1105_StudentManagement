@@ -30,7 +30,7 @@
                     {{$student->email}}
                 </td>
                 <td class="content-table">
-                    <img src="{{url("/update/".$student->photo)}}" alt="">
+                    <img src="{{url("/upload/".$student->photo)}}" alt="">
                 </td>
                 <td class="content-table">
                     {{$student->classes->name}}

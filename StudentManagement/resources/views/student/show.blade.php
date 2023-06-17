@@ -8,7 +8,7 @@
        <h1 >{{$student->birth}}</h1>
        <h1 >{{$student->email}}</h1>
        <h1 >{{$student->classes->pluck('name')}}</h1>
-       <img src="{{url("/update/".$student->photo)}}" alt="">
+       <img src="{{url("/upload/".$student->photo)}}" alt="">
     </div>
 </div>
 
