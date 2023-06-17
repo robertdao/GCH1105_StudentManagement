@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @section('title', 'List Student')
 @section('content')
-<form action = '/students' method = 'post'>
+<form action = '/students' method = 'post' enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
         <label for="student_id" class="form-label">Student ID</label>
@@ -18,6 +18,10 @@
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" name="email" placeholder="List Student">
+    </div>
+    <div class="mb-3">
+        <label for="photo" class="form-label">Photo</label>
+        <input type="file" class="form-control" id="photo" name="photo" placeholder="Photo">
     </div>
     <div class="mb-3">
         <label for="classes" class="form-label">Class</label>

@@ -51,6 +51,8 @@ class StudentController extends Controller
         $students->email = $request->email;
         $students->classes_id = $request->classes_id;
         $students->majors_id = $request->majors_id;
+        $photo = $request->file('photo')->store('public');
+        $students->photo = substr($photo,strlen('public/'));
         $students->save();
         return redirect('/students');
     }

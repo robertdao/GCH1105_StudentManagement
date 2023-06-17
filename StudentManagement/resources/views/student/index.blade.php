@@ -9,6 +9,7 @@
                 <th class="head-table">Name</th>
                 <th class="head-table">Birth Year</th>
                 <th class="head-table">Email</th>
+                <th class="head-table">Photo</th>
                 <th class="head-table">Class</th>
                 <th class="head-table">Major</th>
                 <th class="head-table">Action</th>
@@ -27,6 +28,9 @@
                 </td>
                 <td class="content-table">
                     {{$student->email}}
+                </td>
+                <td class="content-table">
+                    <img src="{{url("/update/".$student->photo)}}" alt="">
                 </td>
                 <td class="content-table">
                     {{$student->classes->name}}

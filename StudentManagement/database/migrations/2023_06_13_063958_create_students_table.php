@@ -17,6 +17,7 @@ return new class extends Migration
             $table->String('name');
             $table->integer('birth');
             $table->string('email')->unique();
+            $table->string('photo');
             $table->foreignId('classes_id')->constrained()->onDelete('cascade');
             $table->foreignId('majors_id')->constrained()->onDelete('cascade');
             $table->timestamps();
