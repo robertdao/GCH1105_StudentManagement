@@ -10,9 +10,13 @@ class Major extends Model
     use HasFactory;
     protected $table = 'majors';
     protected $fillable = [
-        'name', 'subject'
+        'name'
     ];
     public function students(){
         $this->hasMany(Student::class);
+    }
+    public function courses(){
+        $this->hasMany(Course::class);
+
     }
 }

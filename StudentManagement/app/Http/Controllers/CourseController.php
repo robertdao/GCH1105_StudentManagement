@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Major;
 use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
@@ -26,10 +27,13 @@ class CourseController extends Controller
     public function create()
     {
         //
+        $majors = Major::all();
         if (!Auth::check()) {
         return redirect('/login');
         }
-        return view('course.create');
+        return view('course.create', [
+            'majors' => $majors
+        ]);
         
     }
 
@@ -41,6 +45,7 @@ class CourseController extends Controller
         //
         $course = new Course();
         $course->name = $request->name;
+        $course->majors_id = $request->majors_id;
         $course->save();
         return redirect("courses");
         
@@ -52,9 +57,11 @@ class CourseController extends Controller
     public function show(string $id)
     {
         //
+        $majors = Major::all();
         $course = Course::find($id);
         return view('course.show',[
-            'course' => $course
+            'course' => $course,
+            'majors' => $majors
         ]);
     }
 
@@ -64,9 +71,11 @@ class CourseController extends Controller
     public function edit(string $id)
     {
         //
+        $majors = Major::all();
         $course = Course::find($id);
         return view('course.edit',[
-            'course' => $course
+            'courses' => $course,
+            'majors' => $majors
         ]);
     }
 
@@ -79,6 +88,7 @@ class CourseController extends Controller
         
         $course =Course::find($id);
         $course->name = $request->name;
+        $course->majors_id = $request->majors_id;
         $course->save();
         return redirect("/courses");
 

@@ -4,19 +4,18 @@
 <div class="container-classroom">
     <table class="table-show">
             <tr class="tr-top">
-                <th class="head-table">Course ID</th>
-                <th class="head-table">Course name</th>
+                <th class="head-table">Course Name</th>
+                <th class="head-table">Major</th>
                 <th class="head-table">Action</th>
             </tr>
             @foreach ($course as $course)
             <tr class="tr-content">
                 <td class="content-table">
-                    {{$course->id}}
-                    {{-- 1 --}}
+                    {{$course->name}}
                 </td>
                 <td class="content-table">
-                    {{$course->name}}
-                    {{-- GCH1105 --}}
+                    {{$course->majors->name}}
+                </td>
                 <td>
                     <a href="{{url("/courses/".$course->id)}} ">View</a>
                     <a href="{{url("/courses/".$course->id."/edit")}}" class="btn btn-warning">Edit</a>

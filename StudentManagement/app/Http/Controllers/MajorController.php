@@ -40,7 +40,6 @@ class MajorController extends Controller
         //
         $major = new Major();
         $major->name = $request->name;
-        $major->subject = $request->subject;
         $major->save();
         return redirect("major");
     }
@@ -77,7 +76,6 @@ class MajorController extends Controller
         //
         $major = Major::find($id);
         $major->name = $request->name;
-        $major->subject = $request->subject;
         $major->save();
         return redirect("/major");
     }

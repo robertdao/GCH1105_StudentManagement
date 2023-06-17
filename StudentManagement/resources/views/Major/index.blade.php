@@ -6,7 +6,6 @@
         <thead class="table-light">
             <tr>
                 <th class="head-table">Major Name</th>
-                <th class="head-table">Major Subject</th>
                 <th class="head-table">Action</th>
             </tr>
             </thead>
@@ -18,7 +17,6 @@
                       {{$major->name}}
                       </a>
                     </td class="tr-content">
-                    <td class="tr-content">{{$major->subject}}</td>
                     <td class="tr-content">
                       <a href="{{url("/major/".$major->id)}}" class="btn btn-primary">View</a>
                       <a href="{{url("/major/".$major->id."/edit")}}" class="btn btn-warning">Edit</a>
