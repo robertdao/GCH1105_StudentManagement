@@ -4,27 +4,28 @@
 <div class="table-responsive">
     <table class="table-show">
         <thead class="table-light">
-            <tr>
+            <tr class="tr-top">
                 <th class="head-table">Major Name</th>
                 <th class="head-table">Action</th>
             </tr>
             </thead>
             <tbody class="table-group-divider">
                   @foreach ($majors as $major)
-                  <tr class="table-primary" >
-                    <td class="tr-content">
-                      <a href="{{url("/major/".$major->id)}}">
+                  <tr class="tr-content" >
+                    <td class="content-table">
                       {{$major->name}}
-                      </a>
-                    </td class="tr-content">
-                    <td class="tr-content">
-                      <a href="{{url("/major/".$major->id)}}" class="btn btn-primary">View</a>
-                      <a href="{{url("/major/".$major->id."/edit")}}" class="btn btn-warning">Edit</a>
-                      <form action="{{url("/major/".$major->id)}}" method="post" class="d-inline">
-                        {{ method_field('DELETE') }}
-                        @csrf
-                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
-                      </form>
+                    </td class="content-table">
+                    <td class="content-table">
+                      <div class="VED">
+
+                        <a href="{{url("/major/".$major->id)}}" class="VED1">View</a>
+                        <a href="{{url("/major/".$major->id."/edit")}}" class="VED2"">Edit</a>
+                        <form action="{{url("/major/".$major->id)}}" method="post">
+                          {{ method_field('DELETE') }}
+                          @csrf
+                          <button type="submit" class="VED3" onclick="return confirm('Are you sure?');">Delete</button>
+                        </form>
+                      </div>
                     </td>
                   </tr>
                   @endforeach

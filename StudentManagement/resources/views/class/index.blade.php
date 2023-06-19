@@ -23,13 +23,15 @@
                         {{$class->name}}
                         {{-- Dao Van Hieu --}}
                     </td>
-                    <td>
-                        <a href="{{url("/class/".$class->id)}} "">View</a>
-                        <a href="{{url("/class/".$class->id."/edit")}}" class="btn btn-warning">Edit</a>
-                        <form action="{{"/class/".$class->id}}" method="post"class="d-inline" >
-                          {{method_field('Delete')}}
-                          @csrf
-                          <button type='submit' class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                    <td class="content-table">
+                        <div class="VED">
+                            <a class="VED1" href="{{url("/class/".$class->id)}} "">View</a>
+                            <a  class="VED2" href="{{url("/class/".$class->id."/edit")}}">Edit</a>
+                            <form action="{{"/class/".$class->id}}" method="post">
+                                {{method_field('Delete')}}
+                                @csrf
+                                <button type='submit' class="VED3" onclick="return confirm('Are you sure?')">Delete</button>
+                        </div>
                     </td>
                 </tr>
                 @endforeach

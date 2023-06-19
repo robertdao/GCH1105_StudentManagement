@@ -16,13 +16,15 @@
                 <td class="content-table">
                     {{$course->majors->name}}
                 </td>
-                <td>
-                    <a href="{{url("/courses/".$course->id)}} ">View</a>
-                    <a href="{{url("/courses/".$course->id."/edit")}}" class="btn btn-warning">Edit</a>
-                    <form action="{{"/courses/".$course->id}}" method="post"class="d-inline" >
-                      {{method_field('Delete')}}
-                      @csrf
-                      <button type='submit' class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                <td  class="content-table">
+                    <div class="VED">
+                        <a  class="VED1" href="{{url("/courses/".$course->id)}} ">View</a>
+                        <a href="{{url("/courses/".$course->id."/edit")}}"  class="VED2">Edit</a>
+                        <form action="{{"/courses/".$course->id}}" method="post" >
+                          {{method_field('Delete')}}
+                          @csrf
+                          <button type='submit'  class="VED3" onclick="return confirm('Are you sure?')">Delete</button>
+                    </div>
                 </td>
             </tr>
             @endforeach

@@ -39,7 +39,7 @@
         </select>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <center><button type="submit" class="codepro-custom-btn codepro-btn-15" ><span>Edit</span></button></center>
 
 
 </form>

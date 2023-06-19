@@ -7,7 +7,7 @@
     </div>
     @if (Auth::check())  
         <div class="authentication">
-            <a href="/login">{{Auth::user()->name}}</a>
+            <p> {{Auth::user()->name}}</p>
             <a  class="register-button" href="/logout">Logout</a>
         </div>
     @else

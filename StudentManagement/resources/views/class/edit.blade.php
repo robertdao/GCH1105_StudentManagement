@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('tile', 'Add Class')
+@section('title', 'Add Class')
 @section('content')
     <form action="/class/{{$class->id}}" method="POST">
     {{method_field('PUT')}}
@@ -14,6 +14,6 @@
       <input type="text"
         class="form-control" name="capacity" id="capacity"  placeholder="" value="{{$class->capacity}}">
     </div>
-    <button type="submit">Submit</button>
+    <center><button type="submit" class="codepro-custom-btn codepro-btn-15" ><span>Edit</span></button></center>
     </form>
 @endsection

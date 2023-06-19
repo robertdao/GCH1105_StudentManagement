@@ -19,6 +19,6 @@
             @endforeach
         </select>
     </div>
-    <button type="submit">Submit</button>
+    <center><button type="submit" class="codepro-custom-btn codepro-btn-15" ><span>Edit</span></button></center>
 </form>
 @endsection
