@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Time extends Model
 {
     use HasFactory;
-    protected $table = 'time';
+    protected $table = 'times';
     protected $fillable = [
         'time'
 ];
 public function schedules(){
-    return $this->belongsTo(Schedule::class);
+    return $this->belongsToMany(Schedule::class);
 }
 
 }

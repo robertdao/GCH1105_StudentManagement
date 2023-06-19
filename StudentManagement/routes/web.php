@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ScheduleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
 
@@ -32,3 +33,4 @@ Route::get('logout', [AuthenticationController::class, 'logout']);
 Route::resource('/major', MajorController::class);
 Route::resource('/students', StudentController::class);
 Route::resource('/courses', CourseController::class);
+Route::resource('/schedules', ScheduleController::class);

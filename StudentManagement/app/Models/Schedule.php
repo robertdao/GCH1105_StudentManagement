@@ -8,14 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Schedule extends Model
 {
     use HasFactory;
-    protected $table = 'schedule';
+    protected $table = 'schedules';
     protected $fillable = [
-         'classes_id','time_id','classroom_id', 
+         'dayOfWeek','time_id'
     ];
     public function times(){
-        return $this->hasMany(Schedule::class);
+        return $this->belongsToMany(Time::class);
     }
-    public function classrooms(){
-        return $this->hasMany(Schedule::class);
-    }
+
 }

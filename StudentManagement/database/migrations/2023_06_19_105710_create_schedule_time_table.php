@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('schedules', function (Blueprint $table) {
+        Schema::create('schedule_time', function (Blueprint $table) {
             $table->id();
-            $table->string('dayOfWeek');
+            $table->foreignId('schedule_id')->constrainedTo()->onDelete('cascade');
+            $table->foreignId('time_id')->constrainedTo()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('schedules');
+        Schema::dropIfExists('schedule_time');
     }
 };
