@@ -10,10 +10,13 @@ class Schedule extends Model
     use HasFactory;
     protected $table = 'schedules';
     protected $fillable = [
-         'dayOfWeek','time_id'
+         'dayOfWeek'
     ];
     public function times(){
         return $this->belongsToMany(Time::class);
+    }
+    public function classrooms(){
+        return $this->belongsToMany(Classroom::class);
     }
 
 }

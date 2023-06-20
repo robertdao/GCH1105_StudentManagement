@@ -9,6 +9,7 @@
                 <tr class="tr-top">
                     <th class="head-table">Day Of Week</th>
                     <th class="head-table">Time</th>
+                    <th class="head-table">Classroom</th>
                     <th class="head-table">Action</th>
                 </tr>
                 @foreach ($schedules as $schedule)
@@ -21,6 +22,12 @@
                             {{$time->time}}
                         </td>
                     @endforeach
+                </td>
+                @foreach ($schedule->classrooms as $classroom)    
+                    <td class="content-table">
+                        {{$classroom->classroom}}
+                    </td>
+                @endforeach
                     <td class="content-table">
                         <div class="VED">
                             <a class="VED1" href="{{url("/schedules/".$schedule->id)}} ">View</a>

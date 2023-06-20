@@ -8,11 +8,20 @@
         <input type="text" class="form-control" id="dayOfWeek" name="dayOfWeek" placeholder="Input day of week">     
     </div>
     <div class="mb-3">
-        <label for="times" class="form-label">Class</label>
+        <label for="times" class="form-label">Time</label>
         <select id="times" name="times[]" class="form-select" aria-label="Select Class">
             <option selected>Please choose one</option>
             @foreach($times as $time)
             <option value="{{$time->id}}">{{$time->time}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="classrooms" class="form-label">Classroom</label>
+        <select id="classrooms" name="classrooms[]" class="form-select" aria-label="Select Class">
+            <option selected>Please choose one</option>
+            @foreach($classrooms as $classroom)
+            <option value="{{$classroom->id}}">{{$classroom->classroom}}</option>
             @endforeach
         </select>
     </div>

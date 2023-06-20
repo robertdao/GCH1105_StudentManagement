@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Classroom extends Model
 {
     use HasFactory;
-    protected $table = 'classroom';
+    protected $table = 'classrooms';
     protected $fillable = [
         'classroom'
     ];
     public function schedules(){
-        return $this->belongsTo(Schedule::class);
+        return $this->belongsToMany(Schedule::class);
     }
 }
