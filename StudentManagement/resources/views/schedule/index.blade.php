@@ -28,6 +28,11 @@
                         {{$classroom->classroom}}
                     </td>
                 @endforeach
+                @foreach ($schedule->classes as $class)    
+                    <td class="content-table">
+                        {{$class->name}}
+                    </td>
+                @endforeach
                     <td class="content-table">
                         <div class="VED">
                             <a class="VED1" href="{{url("/schedules/".$schedule->id)}} ">View</a>

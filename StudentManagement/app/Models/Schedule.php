@@ -18,5 +18,8 @@ class Schedule extends Model
     public function classrooms(){
         return $this->belongsToMany(Classroom::class);
     }
+    public function classes(){
+        return $this->belongsToMany(Classes::class);
+    }
 
 }

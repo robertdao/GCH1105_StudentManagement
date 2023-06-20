@@ -25,6 +25,15 @@
             @endforeach
         </select>
     </div>
+    <div class="mb-3">
+        <label for="classes" class="form-label">Class</label>
+        <select id="classes" name="classes[]" class="form-select" aria-label="Select Class">
+            <option selected>Please choose one</option>
+            @foreach($classes as $class)
+            <option value="{{$class->id}}">{{$class->name}}</option>
+            @endforeach
+        </select>
+    </div>
     {{-- <button type="submit" class="btnCE">Submit</button> --}}
     <center><button type="submit" class="codepro-custom-btn codepro-btn-12" ><span>Click!</span><span>Create</span></button></center>
 </form>
