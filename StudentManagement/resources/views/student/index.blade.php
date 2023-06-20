@@ -19,6 +19,7 @@
                 @foreach ($students as $student)
                 <tr class="tr-content">
                     <td class="content-table">
+                        <a href="{{url("/students/".$student->id)}}">
                         {{$student->student_id}}
                     </td>
                     <td class="content-table">
