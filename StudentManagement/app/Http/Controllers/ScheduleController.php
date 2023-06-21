@@ -8,6 +8,7 @@ use App\Models\Classroom;
 use App\Models\Classes;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ScheduleController extends Controller
 {
@@ -35,6 +36,9 @@ class ScheduleController extends Controller
     public function create()
     {
         //
+        if (!Auth::check()) {
+        return redirect('/login');
+        }
         $times = Time::all();
         $classrooms = Classroom::all();
         $classes = Classes::all();
@@ -93,6 +97,9 @@ class ScheduleController extends Controller
     public function destroy(string $id)
     {
         //
+        if (!Auth::check()) {
+        return redirect('/login');
+        }
         $schedules = Schedule::find($id);
         $schedules->delete();
         return redirect('schedules');
