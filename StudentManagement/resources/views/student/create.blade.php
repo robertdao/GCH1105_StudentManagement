@@ -38,7 +38,7 @@
         </select>
     </div>
     <div class="mb-3">
-        <label for="courses" class="form-label">Major</label>
+        <label for="courses" class="form-label">Course</label>
         <select id="courses" name="courses[]" class="form-select" aria-label="Select Course">
             <option selected>Please choose one</option>
             @foreach($courses as $course)
