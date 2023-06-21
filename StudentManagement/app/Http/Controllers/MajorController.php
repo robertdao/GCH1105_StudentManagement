@@ -59,6 +59,9 @@ class MajorController extends Controller
     {
         //
         $major = Major::find($id);
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         return view("major.edit", [
             'major' => $major
         ]);
@@ -83,6 +86,9 @@ class MajorController extends Controller
     {
         //
         $major = Major::find($id);
+        if(!Auth::check()){
+            return redirect("/login");
+        }
         $major->delete();
         return redirect("/major");
     }

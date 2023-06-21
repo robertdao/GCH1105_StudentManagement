@@ -65,6 +65,9 @@ class ClassController extends Controller
     {
         //
         $class = Classes::find($id);
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         return view('class.edit', [
             'class'=>$class,
         ]);
@@ -91,6 +94,9 @@ class ClassController extends Controller
     {
         //
         $class = Classes::find($id);
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         $class->delete();
         return redirect('class');
     }
