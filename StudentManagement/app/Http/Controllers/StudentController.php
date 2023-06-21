@@ -89,6 +89,9 @@ class StudentController extends Controller
         $classes = Classes::all();
         $majors = Major::all();
         $courses = Course::all();
+        if (!Auth::check()) {
+            return redirect('/login');
+            }
         return view('student.edit', [
             'student' => $students,
             'classes' => $classes,
@@ -121,6 +124,9 @@ class StudentController extends Controller
     public function destroy(string $id)
     {
         $students = Student::find($id);
+        if (!Auth::check()) {
+            return redirect('/login');
+            }
         $students->delete();
 
         return redirect('/students');

@@ -70,6 +70,9 @@ class CourseController extends Controller
         //
         $majors = Major::all();
         $course = Course::find($id);
+        if (!Auth::check()) {
+            return redirect('/login');
+            }
         return view('course.edit',[
             'courses' => $course,
             'majors' => $majors
@@ -100,6 +103,9 @@ class CourseController extends Controller
     {
         //
         $course = Course:: find($id);
+        if (!Auth::check()) {
+            return redirect('/login');
+            }
         $course->delete();
         return redirect("/courses");
 
