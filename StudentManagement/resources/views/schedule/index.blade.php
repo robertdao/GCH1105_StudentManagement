@@ -48,7 +48,7 @@
                                                     <div class="event-wrap">
                                                         @foreach ($schedule->classes as $class)    
                                                             <h3>
-                                                                <a href="#">{{$class->name}}</a>
+                                                                <a href="{{url('/class/'.$class->id)}}">{{$class->name}}</a>
                                                             </h3>
                                                         @endforeach
                                                         
@@ -57,7 +57,7 @@
                                                                 class="organizers"
                                                             >
                                                                 <a href="#"
-                                                                >{{$schedule->courses->name}}</a
+                                                                >{{$schedule->course->name}}</a
                                                                 >
                                                             </div>
                                                             @foreach ($schedule->times as $time)    

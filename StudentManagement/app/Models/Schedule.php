@@ -21,7 +21,7 @@ class Schedule extends Model
     public function classes(){
         return $this->belongsToMany(Classes::class);
     }
-    public function courses(){
+    public function course(){
         return $this->belongsTo(Course::class);
     }
 
