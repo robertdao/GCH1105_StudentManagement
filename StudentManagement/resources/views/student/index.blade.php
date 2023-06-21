@@ -10,17 +10,16 @@
                     <th class="head-table">Student ID</th>
                     <th class="head-table">Name</th>
                     <th class="head-table">Birth Year</th>
-                    <th class="head-table">Email</th>
                     <th class="head-table">Photo</th>
                     <th class="head-table">Class</th>
                     <th class="head-table">Major</th>
+                    <th class="head-table">Course</th>
                     <th class="head-table">Action</th>
                 </tr>
                 @foreach ($students as $student)
                 <tr class="tr-content">
                     <td class="content-table">
-                        <a href="{{url("/students/".$student->id)}}">
-                        {{$student->student_id}}
+                        {{$student->id}}
                     </td>
                     <td class="content-table">
                         {{$student->name}}
@@ -30,17 +29,22 @@
                         {{$student->birth}}
                     </td>
                     <td class="content-table">
-                        {{$student->email}}
-                    </td>
-                    <td class="content-table">
                         <img class="img-student" src="{{url("/upload/".$student->photo)}}" alt="">
                     </td>
                     <td class="content-table">
-                        {{$student->classes->name}}
+                        <a href="{{url('/class/'.$student->classes->id)}}">
+                            {{$student->classes->name}}
+                        </a>
                     </td>
                     <td class="content-table">
                         {{$student->majors->name}}
                     </td>
+                    <td class="content-table">
+                            @foreach ($student->courses as $course)
+                            {{$course->name}} 
+                            <br>
+                            @endforeach
+                        </td>
     
                     <td class="content-table">
                         <div class="VED">

@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('title', 'List Student')
+@section('title', 'Create Schedule')
 @section('content')
 <form action = '/schedules' method = 'post' enctype="multipart/form-data">
     @csrf
@@ -31,6 +31,15 @@
             <option selected>Please choose one</option>
             @foreach($classes as $class)
             <option value="{{$class->id}}">{{$class->name}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="course_id" class="form-label">Course</label>
+        <select id="course_id" name="course_id" class="form-select" aria-label="Select Course">
+            <option selected>Please choose one</option>
+            @foreach($courses as $course)
+            <option value="{{$course->id}}">{{$course->name}}</option>
             @endforeach
         </select>
     </div>

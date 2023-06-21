@@ -39,6 +39,17 @@
         </select>
     </div>
 
+
+    <div class="mb-3">
+        <label for="courses" class="form-label">Course</label>
+        <select id="courses" name="courses[]" class="multiple-select"Select Course" multiple>
+            <option>Please choose one</option>
+            @foreach($courses as $course)
+            <option value="{{$course->id}}" @if($student->courses->contains($course->id)) selected @endif>{{$course->name}}</option>
+            @endforeach
+        </select>
+    </div>
+
     <center><button type="submit" class="codepro-custom-btn codepro-btn-15" ><span>Edit</span></button></center>
 
 

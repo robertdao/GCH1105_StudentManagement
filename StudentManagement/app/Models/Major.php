@@ -13,10 +13,9 @@ class Major extends Model
         'name'
     ];
     public function students(){
-        $this->hasMany(Student::class);
+        return $this->hasMany(Student::class);
     }
     public function courses(){
-        $this->hasMany(Course::class);
-
+        return $this->hasMany(Course::class);
     }
 }

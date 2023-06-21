@@ -37,6 +37,15 @@
             @endforeach
         </select>
     </div>
+    <div class="mb-3">
+        <label for="courses" class="form-label">Major</label>
+        <select id="courses" name="courses[]" class="form-select" aria-label="Select Course">
+            <option selected>Please choose one</option>
+            @foreach($courses as $course)
+            <option class="select-option" value="{{$course->id}}">{{$course->name}}</option>
+            @endforeach
+        </select>
+    </div>
     <div class="upload-file">
         <label for="photo" class="lable-file">Photo</label>
         <input type="file" class="form-file" id="photo" name="photo" placeholder="Photo">

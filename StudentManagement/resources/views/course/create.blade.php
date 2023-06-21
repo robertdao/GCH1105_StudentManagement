@@ -8,7 +8,7 @@
             <input type="text" class="form-control" id="name" name="name" placeholder="Course name">
         </div>
         <div class="mb-3">
-            <label for="majors_id" class="form-label">Major</label>
+            <label for="major_id" class="form-label">Major</label>
             <select id="majors_id" name="majors_id" class="form-select" aria-label="Select Major">
                 <option selected>Please choose one</option>
                 @foreach($majors as $major)

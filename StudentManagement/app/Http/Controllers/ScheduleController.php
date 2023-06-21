@@ -6,6 +6,7 @@ use App\Models\Schedule;
 use App\Models\Time;
 use App\Models\Classroom;
 use App\Models\Classes;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
@@ -37,10 +38,12 @@ class ScheduleController extends Controller
         $times = Time::all();
         $classrooms = Classroom::all();
         $classes = Classes::all();
+        $courses = Course::all();
         return view('schedule.create',[
             'times' => $times,
             'classrooms' => $classrooms,
-            'classes' => $classes
+            'classes' => $classes,
+            'courses' => $courses
         ]);
     }
 
@@ -52,6 +55,7 @@ class ScheduleController extends Controller
         //
         $schedules = new Schedule();
         $schedules->dayOfWeek = $request->dayOfWeek;
+        $schedules->course_id = $request->course_id;
         $schedules->save();
         $schedules->times()->attach($request->times);
         $schedules->classrooms()->attach($request->classrooms);

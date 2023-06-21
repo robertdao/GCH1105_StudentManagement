@@ -4,50 +4,100 @@
 
 
 @if (count($schedules) > 0)
-    <div class="container-classroom">
-        <table class="table-show">
-                <tr class="tr-top">
-                    <th class="head-table">Day Of Week</th>
-                    <th class="head-table">Time</th>
-                    <th class="head-table">Classroom</th>
-                    <th class="head-table">Action</th>
-                </tr>
-                @foreach ($schedules as $schedule)
-                <tr class="tr-content">
-                    <td class="content-table">
-                        {{$schedule->dayOfWeek}}
-                    </td>
-                    @foreach ($schedule->times as $time)    
-                        <td class="content-table">
-                            {{$time->time}}
-                        </td>
-                    @endforeach
-                </td>
-                @foreach ($schedule->classrooms as $classroom)    
-                    <td class="content-table">
-                        {{$classroom->classroom}}
-                    </td>
-                @endforeach
-                @foreach ($schedule->classes as $class)    
-                    <td class="content-table">
-                        {{$class->name}}
-                    </td>
-                @endforeach
-                    <td class="content-table">
-                        <div class="VED">
-                            <a class="VED1" href="{{url("/schedules/".$schedule->id)}} ">View</a>
-                            <a href="{{url("/schedules/".$schedule->id."/edit")}}" class="VED2">Edit</a>
-                            <form action="{{"/schedules/".$schedule->id}}" method="post" >
-                              {{method_field('Delete')}}
-                              @csrf
-                              <button type='submit' class="VED3" onclick="return confirm('Are you sure?')">Delete</button>
+    <div class="event-schedule-area-two bg-color pad100">
+            <div class="containerr">
+                <!-- row end-->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tab-content" id="myTabContent">
+                            <div
+                                class="tab-pane fade active show"
+                                id="home"
+                                role="tabpanel"
+                            >
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Date
+                                                </th>
+                                                <th scope="col">Session</th>
+                                                <th scope="col">Classroom</th>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($schedules as $schedule)
+                                                
+                                            <tr class="inner-box">
+                                                <th scope="row" class="content-table">
+                                                    <div class="event-date">
+                                                        <span>{{$schedule->dayOfWeek}}</span>
+                                                    </div>
+                                                </th>
+                                                <td class="content-table">
+                                                    <div class="event-wrap">
+                                                        @foreach ($schedule->classes as $class)    
+                                                            <h3>
+                                                                <a href="#">{{$class->name}}</a>
+                                                            </h3>
+                                                        @endforeach
+                                                        
+                                                        <div class="meta">
+                                                            <div
+                                                                class="organizers"
+                                                            >
+                                                                <a href="#"
+                                                                >{{$schedule->courses->name}}</a
+                                                                >
+                                                            </div>
+                                                            @foreach ($schedule->times as $time)    
+                                                                <div class="time">
+                                                                    <span
+                                                                    >{{$time->time}}</span
+                                                                    >
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                @foreach ($schedule->classrooms as $classroom)    
+                                                    <td class="content-table">
+                                                        <div class="r-no">
+                                                            <span>{{$classroom->classroom}}</span>
+                                                        </div>
+                                                    </td>
+                                                    @endforeach
+                                                <td class="content-table">
+                                                     <div class="VED">
+                                                        <form action="{{"/schedules/".$schedule->id}}" method="post" >
+                                                        {{method_field('Delete')}}
+                                                        @csrf
+                                                        <button type='submit' class="VED3" onclick="return confirm('Are you sure?')">Delete</button>
+                                                        </form>
+                                                     </div>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                    </td>
-                </tr>
-                @endforeach
-        </table>
-    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 @else
-<h1>Dont have schedule</h1>
+<h1>Dont have any schedule</h1>
 @endif
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Models\Classes;
+use App\Models\Course;
 use App\Models\Major;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,11 +18,13 @@ class StudentController extends Controller
         $students = Student::all();
         $classes = Classes::all();
         $majors = Major::all();
+        $courses = Course::all();
 
         return view('student.index', [
             'students' => $students,
             'classes' => $classes,
             'majors' => $majors,
+            'courses' => $courses,
         ]);
     }
 
@@ -30,6 +33,7 @@ class StudentController extends Controller
      */
     public function create()
     {
+        $courses = Course::all();
         $students = Student::all();
         $classes = Classes::all();
         $majors = Major::all();
@@ -40,6 +44,7 @@ class StudentController extends Controller
             'students' => $students,
             'classes' => $classes,
             'majors' => $majors,
+            'courses' => $courses,
         ]);
     }
 
@@ -58,6 +63,7 @@ class StudentController extends Controller
         $photo = $request->file('photo')->store('public');
         $students->photo = substr($photo,strlen('public/'));
         $students->save();
+        $students->courses()->attach($request->courses);
         return redirect('/students');
     }
 
@@ -82,10 +88,12 @@ class StudentController extends Controller
         $students = Student::find($id);
         $classes = Classes::all();
         $majors = Major::all();
+        $courses = Course::all();
         return view('student.edit', [
             'student' => $students,
             'classes' => $classes,
             'majors' => $majors,
+            'courses' => $courses
         ]);
     }
 
@@ -101,7 +109,8 @@ class StudentController extends Controller
         $students->birth = $request->birth;
         $students->email = $request->email;
         $students->classes_id = $request->classes_id;
-        $students->majors_id = $request->majors_id;
+        $students->major_id = $request->majors_id;
+        $students->courses()->sync($request->courses);
         $students->save();
         return redirect('/students');
     }

@@ -50,6 +50,16 @@
                 </div>
             </a>
         </div>
+        <div class="content">
+            <a class="content-action" href="{{url('schedules')}}">
+                <div class="list-content">
+                    <div class="image-logo">
+                        <img srcset="{{URL('images/magic-star.png')}} 2x" alt="">
+                    </div>
+                    Schedule
+                </div>
+            </a>
+        </div>
     </div>
     <div class="list-buttom">
         <p class="add">Add</p>
@@ -59,7 +69,7 @@
                     <div class="image-logo">
                         <img srcset="{{URL('images/course.png')}} 2x" alt="">
                     </div>
-                    Add Course
+                    Create Course
                 </div>
             </a>
         </div>
@@ -70,7 +80,7 @@
                     <div class="image-logo">
                         <img srcset="{{URL('images/major.png')}} 2x" alt="">
                     </div>
-                    Add Major
+                    Create Major
                 </div>
             </a>
         </div>
@@ -81,7 +91,7 @@
                     <div class="image-logo">
                         <img srcset="{{URL('images/paper.png')}} 2x" alt="">
                     </div>
-                    Add Class
+                    Create Class
                 </div>
             </a>
         </div>
@@ -92,7 +102,18 @@
                     <div class="image-logo">
                         <img srcset="{{URL('images/add-user.png')}} 2x" alt="">
                     </div>
-                    ADD Student
+                    Create Student
+                </div>
+            </a>
+        </div>
+        
+        <div class="content">
+            <a class="content-action" href="{{url('schedules/create')}}">
+                <div class="list-content">
+                    <div class="image-logo">
+                        <img srcset="{{URL('images/magic-star.png')}} 2x" alt="">
+                    </div>
+                    Create Schedule
                 </div>
             </a>
         </div>

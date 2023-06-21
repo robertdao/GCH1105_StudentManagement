@@ -12,7 +12,12 @@ class Course extends Model
         'name', 'majors_id'
     ];
     public function majors(){
-        $this->belongsTo(Major::class);
         return $this->belongsTo(Major::class);
+    }
+    public function students(){
+        return $this->belongsToMany(Student::class);
+    }
+    public function schedules(){
+        return $this->hasMany(Schedule::class);
     }
 }

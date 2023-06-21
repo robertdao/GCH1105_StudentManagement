@@ -6,22 +6,17 @@
                 <tr class="tr-top">
                     <th class="head-table">No.</th>
                     <th class="head-table">Classroom</th>
-                    <th class="head-table">Student</th>
                     <th class="head-table">Action</th>
                 </tr>
                 @foreach ($classes as $class)
                 <tr class="tr-content">
                     <td class="content-table">
-                        {{$class->id}}
-                        {{-- 1 --}}
+                            {{$class->id}}
                     </td>
                     <td class="content-table">
-                        {{$class->name}}
-                        {{-- GCH1105 --}}
-                    </td>
-                    <td class="content-table">
-                        {{$class->name}}
-                        {{-- Dao Van Hieu --}}
+                        <a href="{{url('/class/'.$class->id)}}">
+                            {{$class->name}}
+                        </a>
                     </td>
                     <td class="content-table">
                         <div class="VED">

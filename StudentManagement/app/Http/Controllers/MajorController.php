@@ -50,10 +50,6 @@ class MajorController extends Controller
     public function show(string $id)
     {
         //
-        $major = Major::find($id);
-        return view('major.show', [
-            'major' => $major
-        ]);
     }
 
     /**

@@ -15,9 +15,11 @@ class CourseController extends Controller
     public function index()
     {
         //
-        $course = Course::all();
+        $majors = Major::all();
+        $courses = Course::all();
         return view('course.index',[
-            'course' => $course
+            'courses' => $courses,
+            'majors' => $majors
         ]);
     }
 
@@ -47,6 +49,7 @@ class CourseController extends Controller
         $course->name = $request->name;
         $course->majors_id = $request->majors_id;
         $course->save();
+        $course->students()->attach($request->students);
         return redirect("courses");
         
     }
@@ -57,12 +60,6 @@ class CourseController extends Controller
     public function show(string $id)
     {
         //
-        $majors = Major::all();
-        $course = Course::find($id);
-        return view('course.show',[
-            'course' => $course,
-            'majors' => $majors
-        ]);
     }
 
     /**
@@ -89,6 +86,7 @@ class CourseController extends Controller
         $course =Course::find($id);
         $course->name = $request->name;
         $course->majors_id = $request->majors_id;
+        $course->students()->sync($request->students);
         $course->save();
         return redirect("/courses");
 

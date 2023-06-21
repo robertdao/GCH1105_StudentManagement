@@ -9,6 +9,7 @@
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <link rel="stylesheet" href="{{URL('css/layout.css')}}">
+        <link rel="stylesheet" href="{{URL('css/index-schedule.css')}}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -40,7 +41,16 @@
             integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
             crossorigin="anonymous"
         ></script>
-
+        <script>
+            document
+                .querySelector(".select-field")
+                .addEventListener("click", () => {
+                    document.querySelector(".list").classList.toggle("show");
+                    document
+                        .querySelector(".down-arrow")
+                        .classList.toggle("rotate180");
+                });
+        </script>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
             integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"

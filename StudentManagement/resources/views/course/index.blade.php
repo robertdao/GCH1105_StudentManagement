@@ -8,7 +8,7 @@
                 <th class="head-table">Major</th>
                 <th class="head-table">Action</th>
             </tr>
-            @foreach ($course as $course)
+            @foreach ($courses as $course)
             <tr class="tr-content">
                 <td class="content-table">
                     {{$course->name}}
@@ -18,7 +18,6 @@
                 </td>
                 <td  class="content-table">
                     <div class="VED">
-                        <a  class="VED1" href="{{url("/courses/".$course->id)}} ">View</a>
                         <a href="{{url("/courses/".$course->id."/edit")}}"  class="VED2">Edit</a>
                         <form action="{{"/courses/".$course->id}}" method="post" >
                           {{method_field('Delete')}}
