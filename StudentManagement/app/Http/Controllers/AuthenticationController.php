@@ -37,8 +37,7 @@ class AuthenticationController extends Controller
         $users->email = $request->email;
         $users->password = Hash::make($request->password);
         $users->save();
-        Auth::login($users);
-        return redirect('index')->with('success', 'You have successfully created an account !!!');
+        return redirect('/login')->with('success', 'You have successfully created an account !!!');
     }
     public function logout(){
         Auth::logout();
